@@ -85,10 +85,10 @@ class InputHandler:
 
     @staticmethod
     def read_points():
-        points_number = int(input())
+        points_number = int(input('Input number of waypoints: '))
 
         points = []
-        for _i in range(points_number):
-            points.append(tuple(map(int, input().split(' '))))
+        for i in range(points_number):
+            points.append(tuple(map(int, input(f'Input coordinates #{i+1}, x y: ').split(' '))))
 
         return points
