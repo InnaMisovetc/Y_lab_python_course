@@ -25,8 +25,8 @@ class Path:
         x, y = zip(*self.points)
         plt.plot(x, y, color=color, ls=ls, alpha=alpha)
         if show_coord:
-            for i_x, i_y in zip(x, y):
-                plt.text(i_x, i_y, '({}, {})'.format(i_x, i_y))
+            for i, i_x, i_y in zip(range(len(self.points) - 1), x, y):
+                plt.text(i_x, i_y, f'{i+1} ({i_x}, {i_y})')
 
     def __str__(self):
         path = ''
