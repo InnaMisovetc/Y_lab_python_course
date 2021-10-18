@@ -18,11 +18,11 @@ class AbstractPlayer(ABC):
 
 class HumanPlayer(AbstractPlayer):
     def select_cell(self, board):
-        position = (input(f'Player {self.marker}, choose cell coordinates: ')).split(' ')
+        position = (input(f'Player {self.marker}, choose cell coordinates in a format x y: ')).split(' ')
         try:
             row, column = map(int, position)
         except ValueError:
-            print('Invalid Input. Enter coordinates from 0 to 9')
+            print(f'Invalid Input. Enter coordinates from 0 to {board.board_size - 1}')
             return self.select_cell(board)
         if not (board.is_cell_in_bounds(row) and board.is_cell_in_bounds(column)):
             print('Enter coordinates from 0 to 9')
