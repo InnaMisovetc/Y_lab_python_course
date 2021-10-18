@@ -2,7 +2,10 @@ from task2.app.game_board import GameBoard
 
 
 def restart_game_dialogue():
-    choice = input('Do you want to play again? ').strip().upper()
+    """ Asks user whether he wants to restart the game. Returns True if the user enters yes.
+    Returns False if the user enters no. Otherwise, asks again to choose yes or no. """
+
+    choice = input('Do you want to play again? Enter yes or no: ').strip().upper()
     if choice == 'YES':
         return True
     elif choice == 'NO':
