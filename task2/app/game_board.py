@@ -79,7 +79,9 @@ class GameBoard:
         """ Allows player to choose marker: X or O. Returns this marker. """
 
         marker = input('Do you want to play for X or for O? ').strip().upper()
-        if marker not in self.MARKERS:
+        if marker == '0':
+            marker = 'O'
+        elif marker not in self.MARKERS:
             print('Enter X or O')
             return self.choose_marker()
         return marker
