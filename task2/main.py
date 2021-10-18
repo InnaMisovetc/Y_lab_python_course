@@ -21,7 +21,7 @@ def main():
             row, column = new_board.current_player.select_cell(new_board)
             if not new_board.play_round(row, column):
                 break
-        if not restart_game_dialogue:
+        if not restart_game_dialogue():
             break
 
 
