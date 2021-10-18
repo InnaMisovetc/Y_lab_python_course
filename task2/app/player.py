@@ -18,6 +18,9 @@ class AbstractPlayer(ABC):
 
 class HumanPlayer(AbstractPlayer):
     def select_cell(self, board):
+        """ Asks user to enter coordinates for a move. If the input is valid (coordinates are in board size range
+        and the cell is empty) returns obtained coordinates. Otherwise, asks user to enter coordinates again. """
+
         position = (input(f'Player {self.marker}, choose cell coordinates in a format x y: ')).split(' ')
         try:
             row, column = map(int, position)
@@ -25,7 +28,7 @@ class HumanPlayer(AbstractPlayer):
             print(f'Invalid Input. Enter coordinates from 0 to {board.board_size - 1}')
             return self.select_cell(board)
         if not (board.is_cell_in_bounds(row) and board.is_cell_in_bounds(column)):
-            print('Enter coordinates from 0 to 9')
+            print(f'Enter coordinates from 0 to {board.board_size - 1}')
             return self.select_cell(board)
         elif not board.is_cell_available(row, column):
             print('This cell is not empty. Choose coordinates of another cell.')
