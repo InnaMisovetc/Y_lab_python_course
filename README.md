@@ -61,9 +61,10 @@
 
 Примеры интерфейса приложения:
 
-![img.png](img.png)
 
-![img_1.png](img_1.png)
+![img](https://user-images.githubusercontent.com/65975409/138614382-4c316f69-0828-4b08-bb91-e6ec1bd049a7.png)
+![img_1](https://user-images.githubusercontent.com/65975409/138614391-b112d05d-820f-4620-a58b-944c4411b16a.png)
+
 
 ### Запуск программы
 Для запуска игры запустите файл `main.py`.
